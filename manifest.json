@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Iconography Translator",
+  "version": "1.0",
+  "description": "Explains UI icons with human-readable descriptions to improve digital literacy and accessibility.",
+  "permissions": ["storage", "contextMenus"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "128": "images/icon128.png"
+  }
+}
